@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Prediction of Start-Up Acquisition Status</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">    
+    </head>
+    <body class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class='card' style="width: 100%; height:100%; margin-top:50px">
+                    <div class="card-header" style="text-align: center;">
+                        <h1>Prediction of Start-Up Acquisition Status</h1>
+                    </div>
+                    <div class="card-body" style='text-align: center'>
+                        <center><form action="{{ url_for('predict') }}" method="POST">
+                            <div class="column">
+                                <div class="col-md-3 form-group">
+                                    <label>Year of Foundation</label>
+                                    <input type="number" class="form-control" id="iyear" name="iyear" placeholder="Year of Foundation">
+                                </div>
+                                <br>
+                                <div class="col-md-3 form-group" style="text-align: center">
+                                    <label>Start-Up's Location</label>
+                                    <input type="text" class='form-control'id="ilocation" name="ilocation" placeholder="Location">
+                                </div>
+                                <br>
+                                <div class="col-md-3 form-group" style="text-align: center">
+                                    <label>Start-Up Funding Rounds</label>
+                                    <input type="number" class='form-control'id="ifrd" name="ifrd" placeholder="Number of Funding Rounds" min="0" max="50000">
+                                </div>
+                                <br>
+                                <div class="col-md-3 form-group" style="text-align: center">
+                                    <label>Start-Up's Total Funding Amount($USD)</label>
+                                    <input type="number" class='form-control'id="ifra" name="ifra" placeholder="Total Amount of Funding">
+                                </div>
+                                <br>
+                                <div class="col-md-3 form-group" style="text-align: center">
+                                    <label>Start-Up Milestones</label>
+                                    <input type="number" class='form-control'id="imil" name="imil" placeholder="Number of Milestiones" min='0' max="50000"> 
+                                </div>
+                                <br>
+                                <div class="col-md-3 form-group" style="text-align: center">
+                                    <label>Start-Up Relationship</label>
+                                    <input type="number" class='form-control'id="irel" name="irel" placeholder="Number of Relationship" min='0' max="50000"> 
+                                </div>
+                                <br><br>
+
+                                <div class="col-md-3 form-group">
+                                    <button class="btn btn-primary form-control">Estimate Status</button>
+                                </div>
+                            </div>
+                        </form></center>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </body>
+</html>
